@@ -1,0 +1,40 @@
+/* подключение шрифтов, остальных файлов, root, основные стили */
+
+@import url("./reset.css");
+@import url("./../blocks/style.css");
+@import url("./../blocks/media.css");
+
+
+@font-face {
+    font-family: "monserat-bold";
+    src: url("./../fonts/Montserrat-Bold.woff2");
+}
+
+@font-face {
+    font-family: "monserat-regular";
+    src: url("./../fonts/Montserrat-Regular.woff2");
+}
+
+@font-face {
+    font-family: "opensans-bold";
+    src: url("./../fonts/OpenSans-Bold.woff2");
+}
+
+@font-face {
+    font-family: "opensans-light";
+    src: url(./../fonts/OpenSans-Light.woff2);
+}
+
+@font-face {
+    font-family: "popins-light";
+    src: url("./../fonts/Poppins-Light.woff2");
+}
+@font-face {
+    font-family: "popins-medium";
+    src: url("./../fonts/Poppins-Medium.woff2");
+}
+@font-face {
+    font-family: "popins-regular";
+    src: url("./../fonts/Poppins-Regular.woff2");
+}
+
