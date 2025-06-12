@@ -1,0 +1,253 @@
+.header__container{
+    display: flex;
+    gap: clamp(100px, 25.83vw, 496px);
+    justify-content: center;
+    align-items: center;
+    margin-top: 39px;
+    margin-bottom: 152px;
+}
+
+.header__nav{
+    display: flex;
+    gap: clamp(20px, 3.18vw ,61px);
+    align-items: center;
+    text-wrap: nowrap;
+}
+
+.header__nav--item {
+    position: relative;
+    display: inline-block;
+    color: var(--color-header);
+    font-family: "popins-light", sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.header__nav--item:hover{
+    color: var(--background-color-btn);
+}
+
+.header__nav--item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0;
+    height: 1px;
+    background-color: var(--background-color-btn);
+    transition: width 0.5s ease;
+}
+
+.header__nav--item:hover::after {
+    width: 100%;
+}
+
+.create__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(50px, 5.94vw ,114px);
+    margin-bottom: 180px;
+}
+
+.create__container--label{
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.create__container--text{
+    width: 480px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 175%;
+    margin-bottom: 32px;
+}
+
+.card{
+    width: 480px;
+    height: 260px;
+    border: 2px solid #C5C5C515;
+    box-shadow: 0px 4px 15px 0px #072A4410;
+    border-radius: 6px;
+}
+
+.card--padding{
+    padding-left: 30px;
+    padding-top: 55px;
+}
+
+.card:hover .card-label, .card:hover .card-text{
+    color: #fff;
+    transition: all 0.2s;
+}
+
+.card-icon--bg{
+    fill: #D8D8D8;
+    fill-opacity: 0.1;
+    transition: fill 0.5s ease, fill-opacity 0.5s ease;
+}
+
+.card:hover .card-icon--bg{
+    fill: #fff;
+    fill-opacity: 1;
+}
+
+.card-icon{
+    fill: #DE3C3C;
+    transition: fill 0.5s ease;
+}
+
+.card:hover .card-icon{
+    fill: #414141;
+}
+
+.card-label{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.card-text{
+    width: 360px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 171%;
+}
+
+.card-label,
+.card-text, .card, .card-svg {
+    position: relative;
+    z-index: 2;
+}
+
+.card::after{
+    content: "";
+    width: 480px;
+    height: 260px;
+    position: absolute;
+    background-image: url("./../img/Oval.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;           
+    background-position: center;
+    border-radius: 6px;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+
+.card:hover::after{
+    opacity: 1;
+}
+
+.cards__container{
+    display: flex;
+    justify-content: center;
+    min-height: 780px;
+    gap:  clamp(20px, 7.97vw, 153px);
+}
+
+.cards__container--flex{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 6.77vw, 130px);
+}
+
+.cards__container--left{
+    justify-content: first baseline;
+}
+
+.cards__container--right{
+    justify-content: end;
+}
+
+.cards{
+    margin-bottom: 178px;
+}
+
+.show{
+    display: inline-block;
+    box-sizing: border-box;
+    background-image: image-set(url("./../img/Bitmap.jpg") 1x, url("./../img/Bitmap@2x.jpg") 2x);
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    padding: 50px;
+    margin-bottom: 200px;
+}
+
+.show__container{
+    min-height: 342px;
+}
+
+.show__container--label{
+    color: var(--color-btn);
+    margin-bottom: 12px;
+}
+
+.show__container--text{
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clients{
+    background-image: image-set(url("./../img/group5.jpg") 1x, url("./../img/group5@2x.jpg") 2x);
+    min-height: 691px;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 200px;
+}
+
+
+.clients-pagination-list{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.clients-pagination-item{
+    display: flex;
+}
+
+.clients-pagination-btn{
+    width: 8px;
+    aspect-ratio: 1;
+    padding: 0;
+    background-color: #949EA7;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.clients-pagination-btn.active{
+    background-color: #DE3C3C;
+}
+
+
+.clients__label{
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 396px;
+}
+
+
+.clients__under-label{
+    font-weight: 300;
+    font-size: 32px;
+    text-align: center;
+}
+
+.clients__text{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 171%;
+    margin-bottom: 33px;
+}

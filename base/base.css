@@ -1,40 +1,77 @@
-/* подключение шрифтов, остальных файлов, root, основные стили */
+/*root, основные стили */
 
-@import url("./reset.css");
-@import url("./../blocks/style.css");
-@import url("./../blocks/media.css");
+:root{
+    --container-max-width: 1233px;
+    --container-padding-x: 10px;
 
+    --font-family-main: "popins-medium";
+    --font-family-accent: "roboto-regular";
+    --font-family-info: "popins-light";
+    --font-family-footer: "popins-regular";
 
-@font-face {
-    font-family: "monserat-bold";
-    src: url("./../fonts/Montserrat-Bold.woff2");
+    --color-label: #212121;
+    --color-text: #C5C5C5;
+    --color-header: #414141;
+    --background-color-btn: #DE3C3C;
+    --color-btn: #fff;
+
+    --card-hover: image-set(url("./../img/Oval.jpg") 1x, url("./../img/Oval@2x.jpg") 2x);
+
 }
 
-@font-face {
-    font-family: "monserat-regular";
-    src: url("./../fonts/Montserrat-Regular.woff2");
+.container{
+    max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
 }
 
-@font-face {
-    font-family: "opensans-bold";
-    src: url("./../fonts/OpenSans-Bold.woff2");
+.label{
+    color: var(--color-label);
+    font-family: var(--font-family-main), sans-serif;
 }
 
-@font-face {
-    font-family: "opensans-light";
-    src: url(./../fonts/OpenSans-Light.woff2);
+.text{
+    color: var(--color-text);
+    font-family: var(--font-family-accent), sans-serif;
 }
 
-@font-face {
-    font-family: "popins-light";
-    src: url("./../fonts/Poppins-Light.woff2");
-}
-@font-face {
-    font-family: "popins-medium";
-    src: url("./../fonts/Poppins-Medium.woff2");
-}
-@font-face {
-    font-family: "popins-regular";
-    src: url("./../fonts/Poppins-Regular.woff2");
+.container__text--flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 20px;
+    background-color: var(--background-color-btn);
+    font-family: var(--font-family-main);
+    color: var(--color-btn);
+    border: none;
+    cursor: pointer;
+    width: 184px;
+    text-wrap: nowrap;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+
+.header__nav--btn{
+    width: 130px;
+}
+
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover .arrow {
+    transform: translateX(5px);
+}
