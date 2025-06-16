@@ -1,0 +1,26 @@
+@media (max-width:1250px) {
+    .question__container{
+        margin-top:clamp(-30px, -80%, -60px);
+    }
+}
+
+@media (max-width:600px) {
+    .question__container{
+        margin-top:20px;
+    }
+    .plans__container{
+        height: auto;
+    }
+    .card-price:last-child{
+        margin-bottom: 20px;
+    }
+
+    .footer{
+        justify-content: center;
+    }
+
+    .footer__content{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

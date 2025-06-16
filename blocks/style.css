@@ -7,6 +7,10 @@
     margin-bottom: 152px;
 }
 
+.header__logo{
+    cursor: pointer;
+}
+
 .header__nav{
     display: flex;
     gap: clamp(20px, 3.18vw ,61px);
@@ -47,6 +51,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: clamp(50px, 5.94vw ,114px);
     margin-bottom: 180px;
 }
@@ -144,6 +149,7 @@
 .cards__container{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     min-height: 780px;
     gap:  clamp(20px, 7.97vw, 153px);
 }
@@ -194,15 +200,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-.clients{
-    background-image: image-set(url("./../img/group5.jpg") 1x, url("./../img/group5@2x.jpg") 2x);
+.clients__preview{
     min-height: 691px;
     background-size: cover;
     background-position: center;
-    padding-bottom: 200px;
+    object-fit:cover;
+    width: 100%;
 }
 
 
@@ -210,6 +215,7 @@
     display: flex;
     justify-content: center;
     column-gap: 20px;
+    margin-bottom: 100px;
 }
 
 .clients-pagination-item{
@@ -235,14 +241,16 @@
 .clients__label{
     font-weight: 500;
     font-size: 24px;
-    margin-bottom: 396px;
 }
 
 
 .clients__under-label{
     font-weight: 300;
-    font-size: 32px;
+    font-size: calc(16px + (32 - 16) * ((100vw - 320px) / (1920 - 320)));
     text-align: center;
+    max-width: 940px;
+    margin-bottom: 50px;
+    line-height: normal;
 }
 
 .clients__text{
@@ -250,4 +258,216 @@
     font-size: 14px;
     line-height: 171%;
     margin-bottom: 33px;
+}
+
+.clients__under-label{
+    font-family: "popins-medium",sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    text-align: center;
+}
+
+.plans__container{
+    width: 100%;
+    height: 1068px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="1920" height="1066" viewBox="0 0 1920 1066" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1920V1012.38C1920 1012.38 1547.72 1098.68 1031.26 1051.08C514.803 1003.47 0 1007.38 0 1007.38V0Z" fill="url(%23paint0_linear_0_3)"/><defs><linearGradient id="paint0_linear_0_3" x1="458.294" y1="260.177" x2="458.294" y2="1000.45" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="%23F6F6F6"/></linearGradient></defs></svg>');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% auto;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: baseline;
+}
+
+.plans__container--label{
+    margin-bottom: 17px;
+    margin-top: 100px;
+}
+
+.plans__container--text{
+    margin-bottom: 80px;
+}
+
+.card-price:hover .plans__container--text{
+    margin-bottom: 60px;
+}
+
+.cards-price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 51px;
+    flex-wrap: wrap;
+}
+
+.card-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Нужно для псевдоэлемента */
+    box-sizing: border-box;
+    padding-top: 20px;
+    width: 270px;
+    height: 360px;
+    border: 1px solid rgba(197, 197, 197, 0.3);
+    border-radius: 6px;
+    cursor: default;
+    transition: all 0.5s;
+    overflow: hidden; 
+}
+
+.card-price::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #DE3C3C;
+    transition: width 0.5s ease;
+}
+
+.card-price:hover {
+    height: 400px;
+    margin-top: -40px;
+    margin-bottom: -40px;
+}
+
+.card-price:hover::before{
+    width: 100%;
+}
+
+.card-price__label{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card-price__text{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 171%;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 40px;
+    padding: 0 35px 0 35px;
+}
+
+.card-price__text--long{
+    margin-bottom: 20px;
+}
+
+.card-price__price{
+    font-weight: 300;
+    font-size: 32px;
+    color: #FFAA64;
+    font-family: "popins-light", sans-serif;
+    transition: color 0.2s;
+    margin-bottom: 63px;
+}
+
+.card-price:hover .card-price__price{
+    color: #DE3C3C;
+}
+
+.card-price__info{
+    text-align: center;
+}
+
+.card-price__btn{
+    background-color: transparent;
+    padding: 0;
+    color: #212121;
+    width: 100%;
+    display: flex;
+
+}
+
+.card-price__line{
+    height: 1px;
+    background: rgba(197, 197, 197, 0.3); /* Полупрозрачный серый */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    width: 100%;
+    margin-bottom: 20px;
+    transition: margin-bottom 0.5s;
+}
+
+.card-price:hover .card-price__line{
+    margin-bottom: 30px;
+}
+
+.question__container{
+    box-sizing: border-box;
+    max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
+    background-color: #fff;
+    margin-inline: auto;
+    text-align: center;
+    box-shadow: 10px 20px 60px 0 rgba(0, 0, 0, 0.06);
+    background: #fff;
+    border-radius: 6px;
+    z-index: 1000;
+    margin-top: clamp(-210px, -80%, -230px);
+    min-height: 260px;
+    margin-bottom: 170px;
+}
+
+.question__label{
+    padding-bottom: 2px;
+}
+
+.question__text{
+    margin-bottom: 30px;
+}
+
+.question__buttons{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.question__btn{
+    font-family: "popins-medium", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #212121;
+    width: 199px;
+    padding: 13px 37px;
+    background-color: #fff;
+    white-space: nowrap;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.question__btn--standart{
+    height: 44px;
+    padding: 12px 20px;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.footer__content{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.logo__color--change{
+    color: #212121;
+    transition: color 0.2s;
+}
+
+.footer__logo--link:hover .logo__color--change{
+    color: #C00000;
 }
