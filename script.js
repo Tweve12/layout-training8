@@ -27,3 +27,9 @@ buttons.forEach((button, index) => {
     clientsSection.style.backgroundImage = backgrounds[index];
   });
 });
+
+
+function burgerFunction(x){
+  x.classList.toggle("switch")
+  document.querySelector('.header__nav').classList.toggle("active");
+};

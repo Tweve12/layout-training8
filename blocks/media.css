@@ -4,6 +4,37 @@
     }
 }
 
+@media (max-width: 780px) {
+    .burger-btn{
+        display: inline-block;
+        z-index: 1000;
+    }
+    .header__container{
+        position: relative;
+        z-index: 1000;
+    }
+
+    .header__nav{
+        opacity: 0;
+        display: flex;
+        position: absolute;
+        background-color: white;
+        width: 200px;
+        padding: 20px 0;
+        border-radius: 10px;
+        flex-direction: column;
+        box-shadow: 10px 60px 60px 0 rgba(0, 0, 0, 0.382);
+        z-index: 100;
+        top: 38px;
+        right: 0;
+        transition: opacity 0.2s;
+    }
+
+    .header__nav.active{
+        opacity: 1;
+    }
+}
+
 @media (max-width:600px) {
     .question__container{
         margin-top:20px;
@@ -21,6 +52,13 @@
 
     .footer__content{
         flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width:500px) {
+    .question__buttons {
+        gap: 10px;
         justify-content: center;
     }
 }

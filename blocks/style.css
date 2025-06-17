@@ -1,7 +1,6 @@
 .header__container{
     display: flex;
-    gap: clamp(100px, 25.83vw, 496px);
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-top: 39px;
     margin-bottom: 152px;
@@ -56,6 +55,10 @@
     margin-bottom: 180px;
 }
 
+.create__preview{
+    width: clamp(300px ,23.54vw, 452px);
+}
+
 .create__container--label{
     font-weight: 500;
     font-size: 24px;
@@ -63,7 +66,7 @@
 }
 
 .create__container--text{
-    width: 480px;
+    max-width: 480px;
     font-weight: 400;
     font-size: 16px;
     line-height: 175%;
@@ -71,7 +74,9 @@
 }
 
 .card{
-    width: 480px;
+    position: relative;
+    overflow: hidden;
+    width: clamp(200, 25vw, 480px);
     height: 260px;
     border: 2px solid #C5C5C515;
     box-shadow: 0px 4px 15px 0px #072A4410;
@@ -114,7 +119,7 @@
 }
 
 .card-text{
-    width: 360px;
+    width: clamp(300px,18.75vw,360px);
     font-weight: 400;
     font-size: 14px;
     line-height: 171%;
@@ -127,6 +132,9 @@
 }
 
 .card::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
     content: "";
     width: 480px;
     height: 260px;
@@ -180,7 +188,7 @@
     background-position: center;
     width: 100vw;
     padding: 50px;
-    margin-bottom: 200px;
+    margin-bottom: clamp(50px,10.42vw, 200px);
 }
 
 .show__container{
@@ -203,11 +211,11 @@
 }
 
 .clients__preview{
-    min-height: 691px;
     background-size: cover;
     background-position: center;
     object-fit:cover;
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -245,8 +253,9 @@
 
 
 .clients__under-label{
+    font-family: "popins-medium",sans-serif;
     font-weight: 300;
-    font-size: calc(16px + (32 - 16) * ((100vw - 320px) / (1920 - 320)));
+    font-size: clamp(16px, 1.67vw ,32px);
     text-align: center;
     max-width: 940px;
     margin-bottom: 50px;
@@ -258,13 +267,6 @@
     font-size: 14px;
     line-height: 171%;
     margin-bottom: 33px;
-}
-
-.clients__under-label{
-    font-family: "popins-medium",sans-serif;
-    font-weight: 300;
-    font-size: 32px;
-    text-align: center;
 }
 
 .plans__container{
@@ -283,7 +285,7 @@
 
 .plans__container--label{
     margin-bottom: 17px;
-    margin-top: 100px;
+    margin-top: clamp(20px, 2.21vw, 100px);
 }
 
 .plans__container--text{
@@ -410,10 +412,10 @@
     box-shadow: 10px 20px 60px 0 rgba(0, 0, 0, 0.06);
     background: #fff;
     border-radius: 6px;
-    z-index: 1000;
+    z-index: 2;
     margin-top: clamp(-210px, -80%, -230px);
     min-height: 260px;
-    margin-bottom: 170px;
+    margin-bottom: clamp(50px, 8.85vw, 170px);
 }
 
 .question__label{
@@ -470,4 +472,37 @@
 
 .footer__logo--link:hover .logo__color--change{
     color: #C00000;
+}
+
+
+.burger-btn{
+    cursor: pointer;
+    box-sizing: border-box;
+    display: none;
+}
+
+
+.line1, .line2, .line3{
+    width: 20px;
+    height: 2px;
+    background: #C00000;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.line1, .line2{
+    margin-bottom: 4px;
+}
+
+.switch .line1{
+    transform: translateY(1px) rotate(-45deg);
+    margin: 0;
+}
+
+.switch .line2{
+    display: none;
+}
+
+.switch .line3{
+    transform: translateY(-1px) rotate(45deg);
 }
